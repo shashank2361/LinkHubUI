@@ -1,0 +1,46 @@
+﻿To Do list
+List Of Tasks
+
+			BO( Ef edmx files) 
+	
+	UI --- BLL  --- DLL  -- Database(Ms sql)
+   Mvc     c#      ADO.net
+                   repository
+
+
+1.	Create solution with all projects -  ok
+2.	Create BOL with Entity Framework - ORM - object relation Mapping   
+	Its is replica of database tables in form of classes   - ok
+
+3.	Add Connection string in UI -   ok 
+4.	Create Areas in MVC -  Ok
+	a.	Common
+	b.	User
+	c.	Admin
+	d.	Security
+5.	Create All Controllers in Respective Areas - Ok
+
+6.	Add Default index views - OK
+7.	Add Bootstrap - ok
+8.	Create BrowseUrl View - ok
+9.	Create Common Layout - Complete
+10. Create DAL  -      Here we use repository 
+  a. Add UrlDb  - 
+11. Create BLL  - ok
+  a. Add UrlBs  - ok
+12. Update BrowseUrl Controller - ok
+13. Update BrowseUrl View - ok  
+14.	Sorting -  ok 
+15. Paging -  ok 
+16. ListCategory, ListUser with Sorting And Paging - Ok 
+17. CreateCategory & Create SubmitUrl Controller - 
+18. Form Validations in BOL for CreateCategory - ok
+19. Form Validations in BOL for SubmitUrl - ok
+20. Custom validation in BOL for SubmitUrl - ok
+21. Adding Baseclasses - ok
+22. ApproveUrls And UserRegistration - ok 
+23. Authentication Filter in Global File- ok  
+24. Creating Custom Membership Providers -  (We need to add two dlls i.e.,System.Configuration and System.Web.ApplicationServices)  ok
+25. Authorization - 
+26. Creating Custom Role Providers - 
+27. Applying a free bootstrap theme  - InProgress

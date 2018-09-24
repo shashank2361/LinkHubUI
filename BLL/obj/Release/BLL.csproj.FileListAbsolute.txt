@@ -1,0 +1,14 @@
+E:\MyProjects\LinkHubUI\BLL\bin\Release\BLL.dll
+E:\MyProjects\LinkHubUI\BLL\bin\Release\BLL.pdb
+E:\MyProjects\LinkHubUI\BLL\bin\Release\BOL.dll
+E:\MyProjects\LinkHubUI\BLL\bin\Release\DLL.dll
+E:\MyProjects\LinkHubUI\BLL\bin\Release\EntityFramework.dll
+E:\MyProjects\LinkHubUI\BLL\bin\Release\BOL.pdb
+E:\MyProjects\LinkHubUI\BLL\bin\Release\BOL.dll.config
+E:\MyProjects\LinkHubUI\BLL\bin\Release\DLL.pdb
+E:\MyProjects\LinkHubUI\BLL\bin\Release\EntityFramework.xml
+E:\MyProjects\LinkHubUI\BLL\obj\Release\BLL.csprojAssemblyReference.cache
+E:\MyProjects\LinkHubUI\BLL\obj\Release\BLL.csproj.CoreCompileInputs.cache
+E:\MyProjects\LinkHubUI\BLL\obj\Release\BLL.csproj.CopyComplete
+E:\MyProjects\LinkHubUI\BLL\obj\Release\BLL.dll
+E:\MyProjects\LinkHubUI\BLL\obj\Release\BLL.pdb

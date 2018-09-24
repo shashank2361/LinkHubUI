@@ -1,0 +1,62 @@
+﻿@model BOL.QuickSubmitURLModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quickly Submit A URL</h2>
+@if (TempData["Msg"] != null)
+{<div class="alert alert-dismissable alert-info">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        @TempData["Msg"].ToString()
+    </div>}
+
+@using (Html.BeginForm("Create", "QuickSubmitURL", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.User.UserEmail, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.User.UserEmail, new { @class = "form-control " })
+                @Html.ValidationMessageFor(model => model.User.UserEmail, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MyUrl.CategoryId, "CategoryId", new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownList("MyUrl.CategoryId", (IEnumerable<SelectListItem>)ViewBag.CategoryId, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MyUrl.CategoryId, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MyUrl.UrlTitle, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.MyUrl.UrlTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MyUrl.UrlTitle, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MyUrl.Url, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.MyUrl.Url, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MyUrl.Url, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-4">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+

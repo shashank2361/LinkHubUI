@@ -1,0 +1,142 @@
+﻿@model IEnumerable<BOL.tbl_Url>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<script src="~/Scripts/jquery-3.0.0.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        BindSelectAll();
+
+        $(document).ajaxStart(function () {
+            $("#loading").show();
+            $("#loading").delay(10000);
+
+        });
+
+        $(document).ajaxStop(function () {
+            $("#loading").delay(10000);
+            $("#loading").hide();
+        });
+
+        $("#Approve").click(function () {
+            checkedIds = $(".ckb").filter(":checked").map(function () { return this.id; });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("ApproveOrRejectAll", "AprroveURLs")",
+                traditional: true,
+                data: { Ids: checkedIds.toArray(), Status: "A", CurrentStatus: "@ViewBag.Status" },
+                success: successFunc,
+                error: errorFunc
+            });
+
+            function successFunc(data, status) {
+
+                 $("#Data").html(data);
+                BindSelectAll();
+            }
+
+            function errorFunc() {
+                alert('error');
+            }
+
+        });
+
+        $("#Reject").click(function () {
+            checkedIds = $(".ckb").filter(":checked").map(function () { return this.id; });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("ApproveOrRejectAll","ApproveURLs")",
+                traditional: true,
+            data:{ Ids:checkedIds.toArray(),Status:"R",CurrentStatus:"@ViewBag.Status"},
+            success: successFunc,
+            error: errorFunc
+        });
+
+            function successFunc(data, status) {
+                $("#Data").html(data);
+                BindSelectAll();
+        }
+
+        function errorFunc() {
+            alert('error');
+        }
+
+    });
+    });
+
+
+    function BindSelectAll()
+    {
+        $("#selectall").click(function (event) {  //on click
+            if (this.checked) { // check select status
+                $('.ckb').each(function () { //loop through each checkbox
+                    this.checked = true;  //select all checkboxes with class "checkbox1"
+                });
+            } else {
+                $('.ckb').each(function () { //loop through each checkbox
+                    this.checked = false; //deselect all checkboxes with class "checkbox1"
+                });
+            }
+        });
+    }
+
+    function ConfirmApprove() {
+        return confirm('Are you sure you want to Approve?');
+    }
+    function ConfirmReject() {
+        return confirm('Are you sure you want to Reject?');
+    }
+</script>
+<h2>Manage URLs</h2>
+
+<div id="loading" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Loading...</h4>
+            </div>
+            <div class="modal-body">
+                <div class="progress progress-striped active">
+                    <div class="progress-bar" style="width:100%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="nav nav-pills">
+    @if (ViewBag.Status == "P")
+    {
+        <li class="active">@Html.ActionLink("Pending Urls", "Index", new { Status = "P" })</li>
+    }
+    else
+    {
+        <li> @Html.ActionLink("Pending Urls", "Index", new { Status = "P" })</li>
+    }
+    @if (ViewBag.Status == "A")
+    {
+        <li class="active">@Html.ActionLink("Approved Urls", "Index", new { Status = "A" }) </li>
+    }
+    else
+    {
+        <li>@Html.ActionLink("Approved Urls", "Index", new { Status = "A" })</li>
+    }
+    @if (ViewBag.Status == "R")
+    {
+        <li class="active">@Html.ActionLink("Rejected Urls", "Index", new { Status = "R" }) </li>
+    }
+    else
+    {
+        <li>@Html.ActionLink("Rejected Urls", "Index", new { Status = "R" })</li>
+    }
+</ul>
+<div id="Data">
+    @Html.Partial("pv_ApproveURLs", Model)
+</div>
+
+<input type="button" id="Approve" value="Approve" class="btn btn-primary" /> | <input type="button" id="Reject" value="Reject" class="btn btn-primary" />

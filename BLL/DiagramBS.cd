@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BLL.AdminBs" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AdminBs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.BaseBs" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAABAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>BaseBs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.CategoryBs" Collapsed="true">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAEAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>CategoryBs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.CommonBs" Collapsed="true">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommonBs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.UrlBs" Collapsed="true">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAEAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>UrlBs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.SecurityBs" Collapsed="true">
+    <Position X="4.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SecurityBs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.UserAreaBs" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserAreaBs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.UserBs" Collapsed="true">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAEAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>UserBs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

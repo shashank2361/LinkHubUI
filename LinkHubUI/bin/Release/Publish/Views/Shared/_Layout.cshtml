@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/bootstrap-United.min.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap-Lumen.min.css" rel="stylesheet" />*@
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("LinkHub", "Index", "Home", new { area = "Common" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", new { Controller = "Home", Area = "Common" })</li>
+                    <li>@Html.ActionLink("BrowseURLs", "Index", new { Controller = "BrowseUrl", Area = "Common" })</li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("A"))
+                        {
+                            <li>@Html.ActionLink("Category", "Index", new { Controller = "Category", Area = "Admin" })</li>
+                            <li>@Html.ActionLink("ListCategory", "Index", new { Controller = "ListCategory", Area = "Admin" })</li>
+                            <li>@Html.ActionLink("ListUser", "Index", new { Controller = "ListUser", Area = "Admin" })</li>
+                            <li>@Html.ActionLink("AprroveURLs", "Index", new { Controller = "AprroveURLs", Area = "Admin" })</li>
+                        }
+                        if (User.IsInRole("A") || User.IsInRole("U"))
+                        {
+                            <li>@Html.ActionLink("SubmitURL", "Index", new { Controller = "URL", Area = "User" })</li>
+                            <li>@Html.ActionLink("SignOut", "SignOut", new { Controller = "Login", Area = "Security" })</li>
+                            <li><a href="#">Welcome @User.Identity.Name</a></li>
+                        }
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("QuickSubmitURL", "Index", new { Controller = "QuickSubmitURL", Area = "Common" })</li>
+                        <li>@Html.ActionLink("Register", "Index", new { Controller = "Register", Area = "Security" })</li>
+                        <li>@Html.ActionLink("Login", "Index", new { Controller = "Login", Area = "Security" })</li>
+                        <li><a href="#">Welcome Guest</a></li>
+
+                    }
+
+
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+
+        <blockquote class="  text-right">
+            <p>Builiding the future</p>
+            <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer"><cite title="Source Title">Shashank Mishra</cite></footer>
+        </blockquote>            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </div>
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

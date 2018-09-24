@@ -1,0 +1,11 @@
+E:\MyProjects\LinkHubUI\BOL\bin\Release\BOL.dll.config
+E:\MyProjects\LinkHubUI\BOL\bin\Release\BOL.dll
+E:\MyProjects\LinkHubUI\BOL\bin\Release\BOL.pdb
+E:\MyProjects\LinkHubUI\BOL\bin\Release\EntityFramework.dll
+E:\MyProjects\LinkHubUI\BOL\bin\Release\EntityFramework.SqlServer.dll
+E:\MyProjects\LinkHubUI\BOL\bin\Release\EntityFramework.xml
+E:\MyProjects\LinkHubUI\BOL\bin\Release\EntityFramework.SqlServer.xml
+E:\MyProjects\LinkHubUI\BOL\obj\Release\BOL.csproj.CoreCompileInputs.cache
+E:\MyProjects\LinkHubUI\BOL\obj\Release\BOL.csproj.CopyComplete
+E:\MyProjects\LinkHubUI\BOL\obj\Release\BOL.dll
+E:\MyProjects\LinkHubUI\BOL\obj\Release\BOL.pdb
