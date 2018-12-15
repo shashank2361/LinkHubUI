@@ -9,3 +9,4 @@ E:\MyProjects\LinkHubUI\BOL\obj\Debug\BOL.csproj.CoreCompileInputs.cache
 E:\MyProjects\LinkHubUI\BOL\obj\Debug\BOL.csproj.CopyComplete
 E:\MyProjects\LinkHubUI\BOL\obj\Debug\BOL.dll
 E:\MyProjects\LinkHubUI\BOL\obj\Debug\BOL.pdb
+E:\MyProjects\LinkHubUI\BOL\obj\Debug\BOL.csprojAssemblyReference.cache

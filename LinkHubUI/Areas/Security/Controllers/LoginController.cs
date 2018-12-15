@@ -58,6 +58,8 @@ namespace LinkHubUI.Areas.Security.Controllers
         public ActionResult ExternalLoginCallback(string returnUrl)
         {
            // var result = OAuthWebSecurity.VerifyAuthentication(returnUrl);
+
+
             AuthenticationResult result = OAuthWebSecurity.VerifyAuthentication(Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
 
             if (result.IsSuccessful == false)
@@ -67,11 +69,27 @@ namespace LinkHubUI.Areas.Security.Controllers
             }
             else
             {
-                 
-                objBs.CreateUserIfDoesNotExist(result.UserName);
-                FormsAuthentication.SetAuthCookie(result.UserName, false);
-                return RedirectToAction("Index", "Home", new { area = "Common" });
-            }
+
+
+
+
+                if (User.Identity.IsAuthenticated)
+                {
+                    // If the current user is logged in add the new account
+                    OAuthWebSecurity.CreateOrUpdateAccount(
+                        result.Provider,
+                        result.ProviderUserId,
+                        User.Identity.Name);
+                    return RedirectToRoute(returnUrl);
+                }
+                else
+                {
+
+                    objBs.CreateUserIfDoesNotExist(result.UserName);
+                    FormsAuthentication.SetAuthCookie(result.UserName, false);
+                    return RedirectToAction("Index", "Home", new { area = "Common" });
+                }
+             }
         }
 
 
